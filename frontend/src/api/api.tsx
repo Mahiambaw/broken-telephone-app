@@ -1,4 +1,4 @@
-import type { Result } from "../../interfaces/Result";
+import type { Result } from "../interfaces/Result";
 
 export const sendPrompt = async (
   prompt: string,
