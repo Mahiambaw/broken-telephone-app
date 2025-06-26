@@ -4,7 +4,7 @@ from routes.generate import generate_bp
 from routes.image import image_bp
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 app.register_blueprint(generate_bp, url_prefix="/api")
 app.register_blueprint(image_bp)
 @app.route("/")

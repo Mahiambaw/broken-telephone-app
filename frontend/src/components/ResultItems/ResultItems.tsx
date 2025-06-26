@@ -7,7 +7,10 @@ interface ResultItemsProps {
 }
 
 const ResultItems: React.FC<ResultItemsProps> = ({ result }) => {
-  const url = "http://127.0.0.1:5000/";
+  const baseURL =
+    import.meta.env.MODE === "production"
+      ? "https://broken-telephone-app.onrender.com/"
+      : "http://127.0.0.1:5000/";
 
   return (
     <section className="mb-12">
@@ -27,7 +30,7 @@ const ResultItems: React.FC<ResultItemsProps> = ({ result }) => {
                 {item.text}
               </p>
               <img
-                src={url + item.image_url}
+                src={baseURL + item.image_url}
                 alt={`Result for round ${item.round}`}
                 className="rounded w-full max-w-md mx-auto"
               />
